@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="https://psaintemarie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://psaintemarie.github.io/" rel="alternate" type="text/html" /><updated>2018-01-28T23:44:17+01:00</updated><id>https://psaintemarie.github.io/</id><title type="html">Philippe Sainte-Marie</title><subtitle>Some of me and some other stuff</subtitle><entry><title type="html">Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/" rel="alternate" type="text/html" title="Unifi USG config for ByTel FTTH in France" /><published>2018-01-28T23:20:00+01:00</published><updated>2018-01-28T23:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/">&lt;p&gt;So are you enjoying your home internet connection? Bouygues Telecom (also known below as Bytel) is one of the few ISPs in France and it can provide (at least in big cities) some pretty nice &lt;a href=&quot;https://www.bouyguestelecom.fr/offres-internet/internet-fibre-ftth&quot;&gt;FTTH connection&lt;/a&gt; with speeds up to &lt;strong&gt;&lt;em&gt;1Gbps&lt;/em&gt;&lt;/strong&gt; :arrow_down: / &lt;strong&gt;&lt;em&gt;250Mbps&lt;/em&gt;&lt;/strong&gt; :arrow_up:, no limits and with a static IP, for around 30€/month. (and they &lt;a href=&quot;https://ispspeedindex.netflix.com/country/france/&quot;&gt;play nice&lt;/a&gt; with &lt;a href=&quot;https://www/netflix.com&quot;&gt;Netflix&lt;/a&gt;)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="https://psaintemarie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://psaintemarie.github.io/" rel="alternate" type="text/html" /><updated>2018-01-28T23:57:33+01:00</updated><id>https://psaintemarie.github.io/</id><title type="html">Philippe Sainte-Marie</title><subtitle>Some of me and some other stuff</subtitle><entry><title type="html">Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/" rel="alternate" type="text/html" title="Unifi USG config for ByTel FTTH in France" /><published>2018-01-28T23:20:00+01:00</published><updated>2018-01-28T23:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/">&lt;p&gt;Are you enjoying your home internet connection? Bouygues Telecom (also known below as Bytel) is one of the few ISPs in France and it can provide (at least in big cities) some pretty nice &lt;a href=&quot;https://www.bouyguestelecom.fr/offres-internet/internet-fibre-ftth&quot;&gt;FTTH connection&lt;/a&gt; with speeds up to &lt;strong&gt;&lt;em&gt;1Gbps&lt;/em&gt;&lt;/strong&gt; :arrow_down: / &lt;strong&gt;&lt;em&gt;250Mbps&lt;/em&gt;&lt;/strong&gt; :arrow_up:, no limits and with a static IP, for around 30€/month. (and they &lt;a href=&quot;https://ispspeedindex.netflix.com/country/france/&quot;&gt;play nice&lt;/a&gt; with &lt;a href=&quot;https://www/netflix.com&quot;&gt;Netflix&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;This is cool ! But they also provide some hardware with the contract which is … well “meh” :expressionless:.
 Don’t get me wrong it’s not that bad, but you don’t have full admin on it and can’t really play around.&lt;/p&gt;
@@ -9,12 +9,10 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
 
 &lt;h2 id=&quot;the-bytel-setup&quot;&gt;The Bytel setup&lt;/h2&gt;
 
-&lt;p&gt;First let’s talk about how Bytel FTTH works with the BBox (router). Here’s a quick overview.&lt;/p&gt;
+&lt;p&gt;First let’s see how Bytel FTTH works with the BBox (router). Here’s a quick overview.&lt;/p&gt;
 
-&lt;div class=&quot;toleft&quot;&gt;
-&lt;img class=&quot;image&quot; src=&quot;https://psaintemarie.github.io/assets/images/posts/bbox-fibre-schema.jpg&quot; alt=&quot;bbox-fibre-schema&quot; /&gt;
 &lt;figcaption class=&quot;caption&quot;&gt;Diagram from Bytel support's page.&lt;/figcaption&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://psaintemarie.github.io/assets/images/posts/bbox-fibre-schema.jpg&quot; alt=&quot;Bytel&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As you can see, it’s pretty simple. The fiber line is built up to somewhere in your house, then they use a fiber ONT to convert to ethernet which is connected to the “box” itself, providing all of the routing we need.&lt;/p&gt;
 
@@ -24,7 +22,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
 
 &lt;h2 id=&quot;the-third-party-setup&quot;&gt;The third party setup&lt;/h2&gt;
 
-&lt;p&gt;You can use any router you want, but you need to know this:&lt;/p&gt;
+&lt;p&gt;You can use any router you want (although you’ll need to keep the ONT), but you need to know this:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;IP details is passed through DHCP (with a specific &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor-class-identifier&lt;/code&gt; name)&lt;/li&gt;
@@ -53,7 +51,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
 
 &lt;p&gt;Let’s move on to our Bytel setup.&lt;/p&gt;
 
-&lt;p&gt;Of course, you’ll need to work on your initial Unifi setup on the LAN, with your controller, gateway and maybe switch and wireless AP. But once this is done, let’s work on the WAN setup for Bytel FTTH.&lt;/p&gt;
+&lt;p&gt;Of course, you’ll need to work on your initial Unifi setup on the LAN, with your controller, gateway and maybe switch and wireless AP. But once this is done, you can focus on the WAN setup to use the Bytel FTTH connection.&lt;/p&gt;
 
 &lt;p&gt;As the Unifi system works with a controller, we’ll need to pass some settings to the gateway using the later. Ah yes, Unifi does not work as the EdgeMax, if you want to pass further settings that are not available on the web UI, you need to create a json file with those specific details. You can read more about that in &lt;a href=&quot;https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-How-to-further-customize-USG-configuration-with-config-gateway-json&quot;&gt;this article&lt;/a&gt;.&lt;/p&gt;
 
@@ -125,7 +123,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
   &lt;li&gt;minimum firewall rules for &lt;code class=&quot;highlighter-rouge&quot;&gt;WAN_IN&lt;/code&gt; (to the LAN) and &lt;code class=&quot;highlighter-rouge&quot;&gt;WAN_LOCAL&lt;/code&gt; (to localhost)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;After getting this file in the right spot, you can either reboot the gateway or just trigger a provision that will apply the latest config to the gateway.&lt;/p&gt;
+&lt;p&gt;After getting this file in the right spot, you can either reboot the gateway or just trigger a provision that will apply the latest config to the gateway. This should now work !&lt;/p&gt;
 
 &lt;p&gt;You can check my &lt;strong&gt;&lt;em&gt;unifi&lt;/em&gt;&lt;/strong&gt; GitHub repository where the configuration shared contains some SNMP basic settings added to the previously shown config.&lt;/p&gt;
 
@@ -135,7 +133,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
 
 &lt;p&gt;I’ll probably add more to the existing repository with more complete versions of the &lt;code class=&quot;highlighter-rouge&quot;&gt;config.gateway.json&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Thanks for reading ! :wave:&lt;/p&gt;</content><author><name>psm</name></author><category term="unifi" /><category term="usg" /><category term="bytel" /><category term="ftth" /><category term="json" /><summary type="html">So are you enjoying your home internet connection? Bouygues Telecom (also known below as Bytel) is one of the few ISPs in France and it can provide (at least in big cities) some pretty nice FTTH connection with speeds up to 1Gbps :arrow_down: / 250Mbps :arrow_up:, no limits and with a static IP, for around 30€/month. (and they play nice with Netflix)</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://psaintemarie.github.io/assets/images/markdown.jpg" /></entry><entry><title type="html">Markdown Extra Components</title><link href="https://psaintemarie.github.io/blog/markdown-extra-components/" rel="alternate" type="text/html" title="Markdown Extra Components" /><published>2016-02-24T22:48:00+01:00</published><updated>2016-02-24T22:48:00+01:00</updated><id>https://psaintemarie.github.io/blog/markdown-extra-components</id><content type="html" xml:base="https://psaintemarie.github.io/blog/markdown-extra-components/">&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+&lt;p&gt;Thanks for reading ! :wave:&lt;/p&gt;</content><author><name>psm</name></author><category term="unifi" /><category term="usg" /><category term="bytel" /><category term="ftth" /><category term="json" /><summary type="html">Are you enjoying your home internet connection? Bouygues Telecom (also known below as Bytel) is one of the few ISPs in France and it can provide (at least in big cities) some pretty nice FTTH connection with speeds up to 1Gbps :arrow_down: / 250Mbps :arrow_up:, no limits and with a static IP, for around 30€/month. (and they play nice with Netflix)</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://psaintemarie.github.io/assets/images/markdown.jpg" /></entry><entry><title type="html">Markdown Extra Components</title><link href="https://psaintemarie.github.io/blog/markdown-extra-components/" rel="alternate" type="text/html" title="Markdown Extra Components" /><published>2016-02-24T22:48:00+01:00</published><updated>2016-02-24T22:48:00+01:00</updated><id>https://psaintemarie.github.io/blog/markdown-extra-components</id><content type="html" xml:base="https://psaintemarie.github.io/blog/markdown-extra-components/">&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
 &lt;p&gt;You can pick as item to see how to apply in markdown.&lt;/p&gt;
 
