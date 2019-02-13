@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://psaintemarie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://psaintemarie.github.io/" rel="alternate" type="text/html" /><updated>2019-02-13T16:12:22+01:00</updated><id>https://psaintemarie.github.io/feed.xml</id><title type="html">Philippe Sainte-Marie</title><subtitle>Some of me and some other stuff</subtitle><entry><title type="html">Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/" rel="alternate" type="text/html" title="Unifi USG config for ByTel FTTH in France" /><published>2018-01-28T23:20:00+01:00</published><updated>2018-01-28T23:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/">&lt;p&gt;Are you enjoying your home internet connection? Bouygues Telecom (also known below as Bytel) is one of the few ISPs in France and it can provide (at least in big cities) some pretty nice &lt;a href=&quot;https://www.bouyguestelecom.fr/offres-internet/internet-fibre-ftth&quot;&gt;FTTH connection&lt;/a&gt; with speeds up to &lt;strong&gt;&lt;em&gt;1Gbps&lt;/em&gt;&lt;/strong&gt; :arrow_down: / &lt;strong&gt;&lt;em&gt;250Mbps&lt;/em&gt;&lt;/strong&gt; :arrow_up:, no limits and with a static IP, for around 30€/month. (and they &lt;a href=&quot;https://ispspeedindex.netflix.com/country/france/&quot;&gt;play nice&lt;/a&gt; with &lt;a href=&quot;https://www.netflix.com&quot;&gt;Netflix&lt;/a&gt;)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://psaintemarie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://psaintemarie.github.io/" rel="alternate" type="text/html" /><updated>2019-02-13T22:34:20+01:00</updated><id>https://psaintemarie.github.io/feed.xml</id><title type="html">Philippe Sainte-Marie</title><subtitle>Some of me and some other stuff</subtitle><entry><title type="html">[Update] Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update/" rel="alternate" type="text/html" title="[Update] Unifi USG config for ByTel FTTH in France" /><published>2019-02-13T22:20:00+01:00</published><updated>2019-02-13T22:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update/">&lt;p&gt;You’ve followed the previous blog post to learn how to &lt;em&gt;not&lt;/em&gt; use the default Bytel hardware? Well you’ll need a small update on your settings.&lt;/p&gt;
+
+&lt;p&gt;In an effort to roll out IPv6 to all their FTTH customers, Bytel had to made change for their connection settings.&lt;/p&gt;
+
+&lt;p&gt;We need to move from &lt;code class=&quot;highlighter-rouge&quot;&gt;VLAN 200&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;VLAN 100&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor-class-identifier&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;quot;byteliad_data&amp;amp;quot;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;quot;BYGTELIAD&amp;amp;quot;&lt;/code&gt;. See below the updated &lt;code class=&quot;highlighter-rouge&quot;&gt;config.gateway.json&lt;/code&gt;.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;{
+        &amp;quot;interfaces&amp;quot;: {
+                &amp;quot;ethernet&amp;quot;: {
+                        &amp;quot;eth0&amp;quot;: {
+                                &amp;quot;duplex&amp;quot;: &amp;quot;auto&amp;quot;,
+                                &amp;quot;speed&amp;quot;: &amp;quot;auto&amp;quot;,
+                                &amp;quot;vif&amp;quot;: {
+                                        &amp;quot;100&amp;quot;: {
+                                                &amp;quot;address&amp;quot;: [
+                                                        &amp;quot;dhcp&amp;quot;
+                                                ],
+                                                &amp;quot;dhcp-options&amp;quot;: {
+                                                        &amp;quot;client-option&amp;quot;: [
+                                                                &amp;quot;send vendor-class-identifier &amp;amp;quot;BYGTELIAD&amp;amp;quot;;&amp;quot;
+                                                        ],
+                                                        &amp;quot;default-route&amp;quot;: &amp;quot;update&amp;quot;,
+                                                        &amp;quot;default-route-distance&amp;quot;: &amp;quot;210&amp;quot;
+                                                },
+                                                &amp;quot;firewall&amp;quot;: {
+                                                        &amp;quot;in&amp;quot;: {
+                                                                &amp;quot;name&amp;quot;: &amp;quot;WAN_IN&amp;quot;
+                                                        },
+                                                        &amp;quot;local&amp;quot;: {
+                                                                &amp;quot;name&amp;quot;: &amp;quot;WAN_LOCAL&amp;quot;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }
+}&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/psaintemarie/92f539b8938c48995791359f566f1a29.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;This has been updated in the repo &lt;a href=&quot;https://github.com/psaintemarie/unifi-bytel&quot;&gt;Unifi config for ByTel FTTH&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading ! :wave:&lt;/p&gt;</content><author><name>psm</name></author><category term="unifi" /><category term="usg" /><category term="bytel" /><category term="ftth" /><category term="json" /><summary type="html">You’ve followed the previous blog post to learn how to not use the default Bytel hardware? Well you’ll need a small update on your settings.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://psaintemarie.github.io/assets/images/markdown.jpg" /></entry><entry><title type="html">Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/" rel="alternate" type="text/html" title="Unifi USG config for ByTel FTTH in France" /><published>2018-01-28T23:20:00+01:00</published><updated>2018-01-28T23:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/">&lt;p&gt;Are you enjoying your home internet connection? Bouygues Telecom (also known below as Bytel) is one of the few ISPs in France and it can provide (at least in big cities) some pretty nice &lt;a href=&quot;https://www.bouyguestelecom.fr/offres-internet/internet-fibre-ftth&quot;&gt;FTTH connection&lt;/a&gt; with speeds up to &lt;strong&gt;&lt;em&gt;1Gbps&lt;/em&gt;&lt;/strong&gt; :arrow_down: / &lt;strong&gt;&lt;em&gt;250Mbps&lt;/em&gt;&lt;/strong&gt; :arrow_up:, no limits and with a static IP, for around 30€/month. (and they &lt;a href=&quot;https://ispspeedindex.netflix.com/country/france/&quot;&gt;play nice&lt;/a&gt; with &lt;a href=&quot;https://www.netflix.com&quot;&gt;Netflix&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;This is cool ! But they also provide some hardware with the contract which is … well “meh” :expressionless:.
 Don’t get me wrong it’s not that bad, but you don’t have full admin on it and can’t really play around.&lt;/p&gt;
