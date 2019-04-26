@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://psaintemarie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://psaintemarie.github.io/" rel="alternate" type="text/html" /><updated>2019-04-26T22:50:59+02:00</updated><id>https://psaintemarie.github.io/feed.xml</id><title type="html">Philippe Sainte-Marie</title><subtitle>Some of me and some other stuff</subtitle><entry><title type="html">[Update] Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update/" rel="alternate" type="text/html" title="[Update] Unifi USG config for ByTel FTTH in France" /><published>2019-02-13T22:20:00+01:00</published><updated>2019-02-13T22:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update/">&lt;p&gt;You’ve followed the &lt;a href=&quot;https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/&quot;&gt;previous blog post&lt;/a&gt; to learn how to &lt;em&gt;not&lt;/em&gt; use the default Bytel hardware? Well you’ll need a small update on your settings.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://psaintemarie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://psaintemarie.github.io/" rel="alternate" type="text/html" /><updated>2019-04-26T22:54:34+02:00</updated><id>https://psaintemarie.github.io/feed.xml</id><title type="html">Philippe Sainte-Marie</title><subtitle>Some of me and some other stuff</subtitle><entry><title type="html">[Update] Unifi USG config for ByTel FTTH in France</title><link href="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update/" rel="alternate" type="text/html" title="[Update] Unifi USG config for ByTel FTTH in France" /><published>2019-02-13T22:20:00+01:00</published><updated>2019-02-13T22:20:00+01:00</updated><id>https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update</id><content type="html" xml:base="https://psaintemarie.github.io/blog/unifi-bytel-ftth-france-update/">&lt;p&gt;You’ve followed the &lt;a href=&quot;https://psaintemarie.github.io/blog/unifi-bytel-ftth-france/&quot;&gt;previous blog post&lt;/a&gt; to learn how to &lt;em&gt;not&lt;/em&gt; use the default Bytel hardware? Well you’ll need a small update on your settings.&lt;/p&gt;
 
 &lt;p&gt;In an effort to roll out IPv6 to all their FTTH customers, Bytel had to made change for their connection settings.&lt;/p&gt;
 
@@ -216,7 +216,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;side-by-side&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;toleft&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://psaintemarie.github.io/assets/images/psm.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alt Text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://psaintemarie.github.io/assets/images/psm.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alt Text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;caption&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Photo by John Doe&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 
@@ -227,7 +227,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
 
 &lt;div class=&quot;side-by-side&quot;&gt;
     &lt;div class=&quot;toleft&quot;&gt;
-        &lt;img class=&quot;image&quot; src=&quot;https://psaintemarie.github.io/assets/images/psm.jpg&quot; alt=&quot;Alt Text&quot; /&gt;
+        &lt;img class=&quot;image&quot; src=&quot;https://psaintemarie.github.io/assets/images/psm.png&quot; alt=&quot;Alt Text&quot; /&gt;
         &lt;figcaption class=&quot;caption&quot;&gt;Photo by John Doe&lt;/figcaption&gt;
     &lt;/div&gt;
 
@@ -244,7 +244,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;toright&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://psaintemarie.github.io/assets/images/psm.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alt Text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://psaintemarie.github.io/assets/images/psm.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alt Text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;caption&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Photo by John Doe&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -255,7 +255,7 @@ Don’t get me wrong it’s not that bad, but you don’t have full admin on it 
     &lt;/div&gt;
 
     &lt;div class=&quot;toright&quot;&gt;
-        &lt;img class=&quot;image&quot; src=&quot;https://psaintemarie.github.io/assets/images/psm.jpg&quot; alt=&quot;Alt Text&quot; /&gt;
+        &lt;img class=&quot;image&quot; src=&quot;https://psaintemarie.github.io/assets/images/psm.png&quot; alt=&quot;Alt Text&quot; /&gt;
         &lt;figcaption class=&quot;caption&quot;&gt;Photo by John Doe&lt;/figcaption&gt;
     &lt;/div&gt;
 &lt;/div&gt;
